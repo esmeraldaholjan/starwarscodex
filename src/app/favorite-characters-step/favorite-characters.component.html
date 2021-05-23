@@ -1,0 +1,3 @@
+<div class="favorite-characters-info" *ngFor="let character of favoriteCharacters; index as i">
+    <h3 (click)="navigateToCharacterDetails(character)">{{ character.name }}</h3>
+</div>

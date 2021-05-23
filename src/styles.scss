@@ -1,0 +1,9 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+@font-face {
+    font-family: "Starjedi";
+    src: local("Starjedi"), url(./assets/fonts/Starjedi.ttf) format("truetype");
+}

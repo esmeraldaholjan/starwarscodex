@@ -1,0 +1,18 @@
+{
+    "lbl-may-the-force-be-with-you": "May the force be with you!",
+    "lbl-filter-by-character-name": "Filter character name",
+    "lbl-name": "Name:",
+    "lbl-birth-year": "Birth year:",
+    "lbl-height": "Height:",
+    "lbl-mass": "Weight:",
+    "lbl-gender": "Gender:",
+    "lbl-homeworld": "Homeworld:",
+    "lbl-hair-color": "Hair color:",
+    "lbl-films": "List of films:",
+    "lbl-title": "Title:",
+    "lbl-producer": "Producer:",
+    "lbl-characters": "Characters:",
+    "lbl-director": "Director:",
+    "lbl-release-date": "Release date:",
+    "lbl-favorites-characters": "Favorites"
+}

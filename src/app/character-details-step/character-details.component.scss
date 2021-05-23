@@ -1,0 +1,71 @@
+p {
+  color: #ffe300;
+}
+
+h1 {
+  cursor: pointer;
+}
+
+th, td {
+  cursor: pointer;
+  img {
+      padding-left: 0.5rem;
+  }
+}
+
+.name {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.character-info-container {
+  font-family: Starjedi;
+  .character-info {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    .info-card {
+      margin-right: 2rem;
+      padding: 2rem;
+      min-width: 20rem;
+      box-shadow: 0px 0px 6px 0px rgb(233, 233, 233);
+      border-radius: 7px;
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      .info-card {
+        margin: 0;
+      }
+    }
+  }
+
+  .name-info {
+    display: flex;
+    padding-bottom: 2rem;
+    h1 {
+      padding-right: 1rem;
+      margin-bottom: 0;
+    }
+    svg {
+      cursor: pointer;
+      margin-top: 0.5rem;
+      &.favorite {
+        fill: #ffe300;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    h4:last-child {
+      color: #1976d2;
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.character-films {
+  font-family: Starjedi;
+  margin-top: 3rem;
+}

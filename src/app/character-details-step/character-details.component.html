@@ -1,0 +1,72 @@
+<app-loader #characterLoader>
+    <div *ngIf="character" class="character-info-container">
+        <div class="name-info">
+            <h1>{{ character.name }}</h1>
+            <svg (click)="makeFavorite()" [ngClass]="{'favorite': isFavoriteCharacter}"
+                xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
+                <path
+                    d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z" />
+            </svg>
+        </div>
+
+        <div class="character-info">
+            <div class="info-card">
+                <div class="info">
+                    <h4 translate="lbl-height"></h4>
+                    <h4>{{ character.height }}</h4>
+                </div>
+                <div class="info">
+                    <h4 translate="lbl-mass"></h4>
+                    <h4>{{ character.mass }}</h4>
+                </div>
+                <div class="info">
+                    <h4 translate="lbl-gender"></h4>
+                    <h4>{{ character.gender }}</h4>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info">
+                    <h4 translate="lbl-homeworld"></h4>
+                    <h4>{{ character.homeworld }}</h4>
+                </div>
+                <div class="info">
+                    <h4 translate="lbl-birth-year"></h4>
+                    <h4>{{ character.birthYear }}</h4>
+                </div>
+                <div class="info">
+                    <h4 translate="lbl-hair-color"></h4>
+                    <h4>{{ character.hairColor }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="character-films">
+        <h4 translate="lbl-films"></h4>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">
+                        <span translate="lbl-title"></span>
+                    </th>
+                    <th scope="col">
+                        <span translate="lbl-producer"></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let film of characterFilms; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>
+                        <ngb-highlight class="name" (click)="navigateToFilmDetails(film)" [result]="film.title"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="film.producer"></ngb-highlight>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</app-loader>

@@ -1,0 +1,21 @@
+form {
+    padding-bottom: 1rem;
+    label {
+      font-size: 21px;
+      font-family: Starjedi;
+    }
+}
+
+th, td {
+  font-family: Starjedi;
+  cursor: pointer;
+  img {
+      padding-left: 0.5rem;
+  }
+}
+
+.name {
+  &:hover {
+    text-decoration: underline;
+  }
+}

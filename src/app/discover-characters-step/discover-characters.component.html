@@ -1,0 +1,41 @@
+<form [formGroup]="formGroup">
+    <div class="form-group form-inline">
+        <label translate="lbl-filter-by-character-name"></label>
+        <input (input)="onFilterChange()" class="form-control ml-2" type="text" formControlName="nameFilter" />
+    </div>
+</form>
+
+<app-loader #characterTableLoader>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" (click)="onSort('name', false);">
+                    <span translate="lbl-name"></span>
+                    <img width="15"
+                        src="{{ ascending ? 'assets/images/logos/down-arrow.svg' : 'assets/images/logos/up-arrow.svg' }}" />
+                </th>
+                <th scope="col" (click)="onSort('birthYear', false);">
+                    <span translate="lbl-birth-year"></span>
+                    <img width="15"
+                        src="{{ ascending ? 'assets/images/logos/down-arrow.svg' : 'assets/images/logos/up-arrow.svg' }}" />
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let character of filteredCharacters; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td class="name">
+                    <ngb-highlight (click)="navigateToCharacter(character)" [result]="character.name"
+                        [term]="getFilterValue()"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="character.birthYear" [term]="getFilterValue()"></ngb-highlight>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</app-loader>
+
+<ngb-pagination [collectionSize]="90" [page]="currentPageNumber" (pageChange)="populateSWCharacters($event)">
+</ngb-pagination>

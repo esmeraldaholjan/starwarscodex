@@ -1,0 +1,52 @@
+<app-loader #filmLoader>
+    <div *ngIf="film" class="character-info-container">
+        <div class="name-info">
+            <h1>{{ film.title }}</h1>
+        </div>
+
+        <div class="character-info">
+            <div class="info-card">
+                <div class="info">
+                    <h4 translate="lbl-producer"></h4>
+                    <h4>{{ film.producer }}</h4>
+                </div>
+                <div class="info">
+                    <h4 translate="lbl-director"></h4>
+                    <h4>{{ film.director }}</h4>
+                </div>
+                <div class="info">
+                    <h4 translate="lbl-release-date"></h4>
+                    <h4>{{ film.releaseDate }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="characters">
+        <h4 translate="lbl-characters"></h4>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">
+                        <span translate="lbl-name"></span>
+                    </th>
+                    <th scope="col">
+                        <span translate="lbl-birth-year"></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let character of characters; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>
+                        <ngb-highlight class="name" (click)="navigateToCharacterDetails(character)" [result]="character.name"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="character.birthYear"></ngb-highlight>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</app-loader>
